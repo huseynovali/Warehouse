@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="././css/style.css">
+    <title>Warehouse</title>
+</head>
+
+<body>
+    <div class="container">
+        <form id="Form">
+            <input type="text" id="ProductName" placeholder="Product ..">
+            <input type="text" id="Barcode" placeholder="Barcode ..">
+            <input type="text" id="ProductPrice" placeholder="Price ..">
+            <input type="text" id="ProductNumber" placeholder="Number ..">
+            <div class="button">
+                <button>Add Product</button>
+            </div>
+        </form>
+        <div class="warehouse">
+            <div class="searchProduct">
+                <input type="text" id="searched" placeholder="Search Product ..">
+                <button id="Searchbtn">Search</button>
+            </div>
+            <h1>Stock</h1>
+            <div class="tableOfProducts">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Barcode</th>
+                            <th>Price</th>
+                            <th>Number</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableBody">
+                        <!--
+                    <tr>
+                        <td>Coco-Cola</td>
+                        <td>075054105403</td>
+                        <td>15$</td>
+                        <td>150</td>
+                        <td>
+                            <button>Sale</button>
+                        </td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                    -->
+                    </tbody>
+
+
+                </table>
+                <div class="button">
+                    <button id="list_btn">List</button>
+                    <button id="clear_btn">Clear All</button>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+    <script src="././app/goods.js"></script>
+
+    <script src="././app/ui.js"></script>
+    <script src="././app/storage.js"></script>
+    <script src="././app/app.js"></script>
+</body>
+
+</html>
