@@ -17,9 +17,9 @@ function eventListeners() {
   Form.addEventListener("submit", formValidationController);
   Search.addEventListener("click", searchedProduct);
   ListProductBtn.addEventListener("click", ListProducts);
-  ProductTable.addEventListener("click", SaleProduct_DeleteProduct);
+  ProductTable.addEventListener("click", clickedProductTable);
   ClearProductBtn.addEventListener("click", clearAll);
-  document.addEventListener("DOMContentLoaded", uiLoaded);
+  document.addEventListener("DOMContentLoaded", loadedUi);
 }
 
 function formValidationController(e) {
@@ -64,7 +64,7 @@ function findedProduct(paramsVal) {
   }
 }
 
-function uiLoaded() {
+function loadedUi() {
   let AllElement = storage.getProductFromStorage();
   let findedElement = JSON.parse(localStorage.getItem("Finded"));
   if (findedElement) {
@@ -87,17 +87,24 @@ function ListProducts() {
   }
 }
 
-function SaleProduct_DeleteProduct(e) {
+function clickedProductTable(e) {
   let targetSpace = e.target;
   let targetContent =
     targetSpace.parentElement.parentElement.firstElementChild.textContent.trim();
   if (targetSpace.className === "deleteBtn") {
-    storage.deleteProductToStorage(targetContent);
+    DeleteProduct(targetContent);
   } else if (targetSpace.className === "saleBtn") {
-    let saleNumber = prompt("number of goods to be sold");
-    storage.saleProductToStorage(targetContent, saleNumber);
+    SaleProduct(targetContent);
   }
-  uiLoaded();
+  loadedUi();
+}
+
+function SaleProduct(parmasVal) {
+  let saleNumber = prompt("number of goods to be sold");
+  storage.saleProductToStorage(parmasVal, saleNumber);
+}
+function DeleteProduct(parmasVal) {
+  storage.deleteProductToStorage(parmasVal);
 }
 
 function clearAll() {

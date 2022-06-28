@@ -55,7 +55,8 @@ Storage.prototype.saleProductToStorage = function (
   } else if (newNumber === 0) {
     alert(`${paramsVal._product} was all sold !`);
   } else if (newNumber < 0) {
-    alert("insert right number !");
+   return alert("insert right number !");; 
+   
   }
   if (localStorage.getItem("Finded")) {
     let product = new Goods(
