@@ -109,11 +109,12 @@ function DeleteProduct(parmasVal) {
 
 function clearAll() {
   if (confirm("are you sure ?")) {
+    let allElement = ProductTable.childElementCount;
+    alert(`${allElement} items deleted`);
     while (ProductTable.firstElementChild !== null) {
       ProductTable.removeChild(ProductTable.firstElementChild);
     }
-    let allElement = ProductTable.childElementCount;
-    alert(`${allElement} items deleted`);
+
     localStorage.clear();
   } else {
     alert("no element was deleted !");
