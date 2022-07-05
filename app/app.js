@@ -53,8 +53,10 @@ function searchedProduct() {
 
 function findedProduct(paramsVal) {
   let allProducts = storage.getProductFromStorage();
+  let ProductName = paramsVal.toLowerCase();
   let findProduct = allProducts.find((element) => {
-    return element._barcode === paramsVal || element._product === paramsVal;
+    let stockProductName = element._product.toLowerCase();
+    return element._barcode === paramsVal || stockProductName === ProductName;
   });
   if (findProduct) {
     localStorage.setItem("Finded", JSON.stringify(findProduct));
